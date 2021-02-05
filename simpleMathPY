@@ -1,0 +1,18 @@
+#!/usr/bin/python3
+import os
+from statistics import mean
+
+def clear():
+    os.system('cls' if os.name == 'nt' else 'echo -e \\\\033c')
+
+clear()
+
+print ("\nLet's perform some calculations! \n")
+try:
+    numbers = []
+
+    while True:
+        print ("Enter number:")
+        numbers.append(int(input()))
+except:
+    print (numbers)
