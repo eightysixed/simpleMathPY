@@ -1,19 +1,29 @@
 #!/usr/bin/python3
-# bot-test?
 import os
 from statistics import mean
 
+#Define the Clear Function
 def clear():
     os.system('cls' if os.name == 'nt' else 'echo -e \\\\033c')
 
-clear()
+clear() # Clear the screen before beginning
 
-print ("\nLet's perform some calculations! \n")
-try:
+print ("Let's perform some calculations! \n")
+print ("Please input your numbers! \n")
+print ("When finished, press any non-numeric key to complete the calculations! \n")
+
+try: # Loop will end when an input other than a number is submitted
     numbers = []
 
     while True:
         print ("Enter number:")
-        numbers.append(int(input()))
+        numbers.append(float(input())) # Use float() instead of int() for decimals
+        clear()
+
 except:
-    print (numbers)
+        clear()
+        print ("The average of the input is:", mean(numbers))
+        print ("\nThe maximum value of the input is", max(numbers))
+        print ("\nThe minimum value of the input is", min(numbers))
+        print ("\nThe delta of the values is", (max(numbers) - min(numbers)))
+        print ("\n\n")
