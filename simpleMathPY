@@ -22,7 +22,7 @@ try: # Loop will end when an input other than a number is submitted
 
 except:
         clear()
-        print ("The average of the numbers is:", mean(numbers))
+        print ("The average of the input is:", mean(numbers))
         print ("\nThe maximum value of the input is", max(numbers))
         print ("\nThe minimum value of the input is", min(numbers))
         print ("\nThe delta of the values is", (max(numbers) - min(numbers)))
