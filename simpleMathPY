@@ -21,7 +21,6 @@ try: # Loop will end when an input other than a number is submitted
         clear()
 
 except:
-
         clear()
         print ("\nThe average of the numbers is:", mean(numbers))
         print ("\n")
