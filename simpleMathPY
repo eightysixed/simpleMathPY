@@ -2,7 +2,8 @@
 import os
 from statistics import mean
 
-#Define the Clear Function
+# Define the Clear Function
+# Bot Test?
 def clear():
     os.system('cls' if os.name == 'nt' else 'echo -e \\\\033c')
 
