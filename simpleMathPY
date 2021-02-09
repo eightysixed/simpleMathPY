@@ -22,8 +22,9 @@ try: # Loop will end when an input other than a number is submitted
 
 except:
         clear()
-        print ("The average of the input is:", mean(numbers))
-        print ("\nThe maximum value of the input is", max(numbers))
-        print ("\nThe minimum value of the input is", min(numbers))
-        print ("\nThe delta of the values is", (max(numbers) - min(numbers)))
+        print ("\nThe average of the values is ", (("{:,.2f}".format(mean(numbers)))))
+        print ("\nThe summation of the input is ", (("{:,.2f}".format(sum(numbers)))))
+        print ("\nThe maximum value of the input is ", (("{:,.2f}".format(max(numbers)))))
+        print ("\nThe minimum value of the input is ", (("{:,.2f}".format(min(numbers)))))
+        print ("\nThe range of the values is", (("{:,.2f}".format(max(numbers) - min(numbers)))))
         print ("\n\n")
