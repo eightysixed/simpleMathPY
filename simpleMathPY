@@ -6,25 +6,27 @@ from statistics import mean
 def clear():
     os.system('cls' if os.name == 'nt' else 'echo -e \\\\033c')
 
-clear() # Clear the screen before beginning
+def calculate():
+    clear() # Clear the screen before beginning
+    print ("Let's perform some calculations! \n")
+    print ("Please input your numbers! \n")
+    print ("When finished, press any non-numeric key to complete the calculations!\n")
 
-print ("Let's perform some calculations! \n")
-print ("Please input your numbers! \n")
-print ("When finished, press any non-numeric key to complete the calculations! \n")
+    try: # Loop will end when an input other than a number is submitted
+        numbers = [] # Create the array
 
-try: # Loop will end when an input other than a number is submitted
-    numbers = []
+        while True:
+                  print ("Enter number:")
+                  numbers.append(float(input())) # Use float() instead of int() for decimals
+                  clear()
 
-    while True:
-        print ("Enter number:")
-        numbers.append(float(input())) # Use float() instead of int() for decimals
-        clear()
-
-except:
-        clear()
-        print ("\nThe average of the values is ", (("{:,.2f}".format(mean(numbers)))))
-        print ("\nThe summation of the input is ", (("{:,.2f}".format(sum(numbers)))))
-        print ("\nThe maximum value of the input is ", (("{:,.2f}".format(max(numbers)))))
-        print ("\nThe minimum value of the input is ", (("{:,.2f}".format(min(numbers)))))
-        print ("\nThe range of the values is", (("{:,.2f}".format(max(numbers) - min(numbers)))))
+    except:
+        clear() # Clear the screen after each input due to large amounts of inputs
+        print ("The average of the values is:", (("{:,.2f}".format(mean(numbers)))))
+        print ("\nThe summation of the input is:", (("{:,.2f}".format(sum(numbers)))))
+        print ("\nThe maximum value of the input is:", (("{:,.2f}".format(max(numbers)))))
+        print ("\nThe minimum value of the input is:", (("{:,.2f}".format(min(numbers)))))
+        print ("\nThe range of the values is:", (("{:,.2f}".format(max(numbers) - min(numbers)))))
         print ("\n\n")
+
+calculate()
