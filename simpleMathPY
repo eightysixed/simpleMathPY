@@ -1,15 +1,37 @@
 #!/usr/bin/python3
 import os
 from statistics import mean
+from statistics import median
+
+class color: # Text formatting
+   PURPLE = '\033[95m'
+   CYAN = '\033[96m'
+   DARKCYAN = '\033[36m'
+   BLUE = '\033[94m'
+   GREEN = '\033[92m'
+   YELLOW = '\033[93m'
+   RED = '\033[91m'
+   BOLD = '\033[1m'
+   UNDERLINE = '\033[4m'
+   END = '\033[0m'
 
 # Define the Clear Function
 def clear():
     os.system('cls' if os.name == 'nt' else 'echo -e \\\\033c')
 
+def runItBack():
+    print ("Would you like to perform more calculations?\n\n")
+    runItBack = input("Press 'y' to continue, or 'n' to exit\n\n")
+    if runItBack == 'y':
+        calculate()
+    else:
+        print ("\n\n")
+        exit()
+
 def calculate():
     clear() # Clear the screen before beginning
-    print ("Let's perform some calculations! \n")
-    print ("Please input your numbers! \n")
+    print ("Destination? Calculation! \n")
+    print ("Input your numbers... \n")
     print ("When finished, press any non-numeric key to complete the calculations!\n")
 
     try: # Loop will end when an input other than a number is submitted
@@ -23,10 +45,12 @@ def calculate():
     except:
         clear() # Clear the screen after each input due to large amounts of inputs
         print ("The average of the values is:", (("{:,.2f}".format(mean(numbers)))))
-        print ("\nThe summation of the input is:", (("{:,.2f}".format(sum(numbers)))))
+        print ("\nThe median of the values is:", (("{:,.2f}".format(median(numbers)))))
         print ("\nThe maximum value of the input is:", (("{:,.2f}".format(max(numbers)))))
         print ("\nThe minimum value of the input is:", (("{:,.2f}".format(min(numbers)))))
         print ("\nThe range of the values is:", (("{:,.2f}".format(max(numbers) - min(numbers)))))
+        print ("\nThe summation of the input is:", (("{:,.2f}".format(sum(numbers)))))
         print ("\n\n")
 
 calculate()
+runItBack()
