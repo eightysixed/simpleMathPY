@@ -51,6 +51,7 @@ def calculate():
         print ("\nThe range of the values is:", (("{:,.2f}".format(max(numbers) - min(numbers)))))
         print ("\nThe summation of the input is:", (("{:,.2f}".format(sum(numbers)))))
         print ("\n\n")
+        runItBack()
 
 calculate()
 runItBack()
